@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 
 // This function is what happens when we click the genrate password button
-function generatePassword() {
+function generatePassword(passwordHolder) {
  // promt a message to the user asking for a number
   var userInput = prompt("How many charactors do you want in your password? (number between 8-126)")
 // parseint will turn a sting into a interger (number) if it cant, then it turns it into a IsNaN) (is not a number)
@@ -32,32 +32,30 @@ function generatePassword() {
   var userCharactors = []
 // algorithm to add lists to the main list that contains all true vaules.         main list gets side lists pushed with.push.     mainlist.push(sidepush)
   if (userNumbers === true) {
-    userCharactors.push(numberList)
+    userCharactors.push(...numberList)
   }
 
   if (userSymbols === true) {
-    userCharactors.push(sysmbols)
+    userCharactors.push(...sysmbols)
   }
 
   if (userUpercase === true) {
-    userCharactors.push(upercase)
+    userCharactors.push(...upercase)
   }
 
   if (userLowercase === true) {
-    userCharactors.push(lowercase)
+    userCharactors.push(...lowercase)
   }
 
-  console.log(userCharactors)
-
-
-
-
-
-
-
-
-
   
+var passwordHolder = [];
+
+for(var i = 0; i < userInput; i++){
+  passwordHolder.push(userCharactors[Math.floor(Math.random()*userCharactors.length)]);
+}
+
+console.log(passwordHolder.join(""));
+
   return ;
 }
 
