@@ -47,16 +47,26 @@ function generatePassword(passwordHolder) {
     userCharactors.push(...lowercase)
   }
 
+if (userCharactors.length < 4) {
+  alert("Please set at least one symbol/charactor")
+  return;
+}
   
+//place holder is where the password will be set to after "for" statement
 var passwordHolder = [];
 
+
+// first line here will add only the amount of charactors set by user
+//secound line pushes random charactors from userCharactors into passwordHolder
 for(var i = 0; i < userInput; i++){
   passwordHolder.push(userCharactors[Math.floor(Math.random()*userCharactors.length)]);
 }
 
+//just for me to see in the console
 console.log(passwordHolder.join(""));
 
-  return ;
+// will return the generatePassword with the passwordHolder var.        .join("") will add all the stings in the var together without , or spaces
+  return passwordHolder.join("") ;
 }
 
 // Write password to the #password input
