@@ -32,20 +32,21 @@ function generatePassword(passwordHolder) {
   var userCharactors = []
 // algorithm to add lists to the main list that contains all true vaules.         main list gets side lists pushed with.push.     mainlist.push(sidepush)
   if (userNumbers === true) {
-    userCharactors.push(...numberList)
+   var userCharactors = userCharactors.concat(numberList);
   }
 
   if (userSymbols === true) {
-    userCharactors.push(...sysmbols)
+    var userCharactors = userCharactors.concat(sysmbols);
   }
 
   if (userUpercase === true) {
-    userCharactors.push(...upercase)
+    var userCharactors = userCharactors.concat(upercase);
   }
 
   if (userLowercase === true) {
-    userCharactors.push(...lowercase)
+    var userCharactors = userCharactors.concat(lowercase);
   }
+
 
 if (userCharactors.length < 4) {
   alert("Please set at least one symbol/charactor")
